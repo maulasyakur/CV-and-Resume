@@ -1,67 +1,598 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maula Ahmad Syakur CV</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <section class="header">
-        <h1>Maula Ahmad Syakur</h1>
-        <p>+90-506-827-7577 | <a href="maulaahmad18@gmail.com">maulaahmad18@gmail.com</a> | <a href="http://www.linkedin.com/in/maula-ahmad-syakur-b34237224">LinkedIn</a> | <a href="https://github.com/maulasyakur">Github</a></p>
-        <p>Çamlıtepe Mah. Güler Sok. No. 8, 06590 Çankaya/Ankara, Türkiye</p>
-    </section>
-    <hr>
-    <section>
-        <h2>PROFESSIONAL SUMMARY</h2>
-        <p>Second year computer engineering student at Hacettepe University with experience in programming with C, C++, Python, Java, HTML, CSS, Javascript, React, Firebase, and Next.js.</p>
-    </section>
-    <hr>
-    <section>
-        <h2>EXPERIENCE</h2>
-        <h3 class="experience-title"><span>Data Analyst, PPI Turki</span><span>August 2023 - October 2023</span></h3>
-        <ul>
-            <li>Analyzed data of Indonesian Students studying in Turkey, cleaned up over thousands of students data.</li>
-            <li>Utilized several tools such as Google Colab and Python Matplotlib.</li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maula Ahmad Syakur — Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --text-primary: #1a1a1a;
+        --text-secondary: #555;
+        --text-tertiary: #999;
+        --border: #e5e5e5;
+        --bg: #fff;
+        --bg-secondary: #f8f8f7;
+        --radius: 8px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --text-primary: #f0f0f0;
+          --text-secondary: #aaa;
+          --text-tertiary: #666;
+          --border: #2a2a2a;
+          --bg: #111;
+          --bg-secondary: #1a1a1a;
+        }
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        font-weight: 300;
+        background: var(--bg);
+        color: var(--text-primary);
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+        font-size: 13.5px;
+        line-height: 1.6;
+      }
+
+      .name {
+        font-family: "DM Serif Display", serif;
+        font-size: 46px;
+        font-weight: 400;
+        letter-spacing: -0.5px;
+        line-height: 1;
+        margin-bottom: 0.6rem;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 16px;
+        color: var(--text-secondary);
+        font-size: 12.5px;
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 0.5px solid var(--border);
+      }
+
+      .contact a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        transition: color 0.15s;
+      }
+
+      .contact a:hover {
+        color: var(--text-primary);
+      }
+      .contact i {
+        font-size: 13px;
+      }
+
+      .summary {
+        font-size: 13.5px;
+        color: var(--text-secondary);
+        max-width: 680px;
+        margin-bottom: 1.75rem;
+        line-height: 1.7;
+      }
+
+      .section {
+        margin-bottom: 1.6rem;
+      }
+
+      .section-title {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text-tertiary);
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 0.5px solid var(--border);
+      }
+
+      .job {
+        margin-bottom: 1rem;
+      }
+
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 0.2rem;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .job-left {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .company {
+        font-weight: 500;
+        font-size: 14px;
+      }
+      .company a {
+        color: var(--text-primary);
+        text-decoration: none;
+      }
+      .company a:hover {
+        text-decoration: underline;
+      }
+
+      .role {
+        color: var(--text-secondary);
+        font-size: 13px;
+      }
+
+      .date {
+        color: var(--text-tertiary);
+        font-size: 12px;
+        white-space: nowrap;
+      }
+
+      .bullets {
+        list-style: none;
+        padding: 0;
+      }
+
+      .bullets li {
+        position: relative;
+        padding-left: 14px;
+        margin-bottom: 3px;
+        color: var(--text-secondary);
+        font-size: 13px;
+      }
+
+      .bullets li::before {
+        content: "–";
+        position: absolute;
+        left: 0;
+        color: var(--text-tertiary);
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 10px;
+      }
+
+      .project-card {
+        background: var(--bg-secondary);
+        border: 0.5px solid var(--border);
+        border-radius: var(--radius);
+        padding: 12px 14px;
+      }
+
+      .project-name {
+        font-weight: 500;
+        font-size: 13.5px;
+        margin-bottom: 3px;
+      }
+      .project-name a {
+        color: var(--text-primary);
+        text-decoration: none;
+      }
+      .project-name a:hover {
+        text-decoration: underline;
+      }
+
+      .project-stack {
+        font-size: 11.5px;
+        color: var(--text-tertiary);
+        margin-bottom: 6px;
+      }
+
+      .project-desc {
+        font-size: 12.5px;
+        color: var(--text-secondary);
+        line-height: 1.55;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 6px 24px;
+      }
+
+      .skill-row {
+        display: flex;
+        gap: 6px;
+        font-size: 13px;
+      }
+      .skill-label {
+        color: var(--text-tertiary);
+        min-width: 90px;
+        flex-shrink: 0;
+      }
+      .skill-value {
+        color: var(--text-secondary);
+      }
+
+      .awards {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .award-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 8px;
+        flex-wrap: wrap;
+        font-size: 13px;
+      }
+
+      .award-left {
+        display: flex;
+        gap: 6px;
+        align-items: baseline;
+        flex-wrap: wrap;
+      }
+      .award-name {
+        font-weight: 500;
+      }
+      .award-detail {
+        color: var(--text-secondary);
+      }
+      .award-date {
+        color: var(--text-tertiary);
+        font-size: 12px;
+        white-space: nowrap;
+      }
+
+      .edu-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-bottom: 3px;
+      }
+
+      .edu-left {
+        display: flex;
+        gap: 8px;
+        align-items: baseline;
+        flex-wrap: wrap;
+      }
+      .edu-school {
+        font-weight: 500;
+        font-size: 14px;
+      }
+      .edu-degree {
+        color: var(--text-secondary);
+        font-size: 13px;
+      }
+      .edu-note {
+        color: var(--text-tertiary);
+        font-size: 12px;
+        font-style: italic;
+      }
+
+      .lang-row {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        font-size: 13px;
+      }
+      .lang-item {
+        display: flex;
+        gap: 6px;
+      }
+      .lang-name {
+        font-weight: 500;
+      }
+      .lang-level {
+        color: var(--text-secondary);
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 2rem 1.25rem;
+        }
+        .name {
+          font-size: 34px;
+        }
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="name">Maula Ahmad Syakur</h1>
+
+    <div class="contact">
+      <a href="mailto:maulaahmad18@gmail.com"
+        ><i class="ti ti-mail" aria-hidden="true"></i> maulaahmad18@gmail.com</a
+      >
+      <a href="tel:+905068277577"
+        ><i class="ti ti-phone" aria-hidden="true"></i> +90 506-827-75-77</a
+      >
+      <span
+        ><i class="ti ti-map-pin" aria-hidden="true"></i> Ankara, Türkiye</span
+      >
+      <a
+        href="https://linkedin.com/in/maula-ahmad-syakur-b34237224"
+        target="_blank"
+        rel="noopener"
+        ><i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn</a
+      >
+      <a href="https://github.com/maulasyakur" target="_blank" rel="noopener"
+        ><i class="ti ti-brand-github" aria-hidden="true"></i> GitHub</a
+      >
+    </div>
+
+    <p class="summary">
+      Frontend-focused Computer Engineering student at Hacettepe University with
+      1+ year of professional React experience across two internships.
+      Passionate about building clean, user-facing products and seeking a
+      frontend internship where I can contribute from day one.
+    </p>
+
+    <div class="section">
+      <div class="section-title">Experience</div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-left">
+            <div class="company">
+              <a href="https://sehsoft.com" target="_blank" rel="noopener"
+                >SEHSOFT</a
+              >
+            </div>
+            <div class="role">Frontend Intern</div>
+          </div>
+          <div class="date">July 2024 – September 2024</div>
+        </div>
+        <ul class="bullets">
+          <li>
+            Contributed to the full development lifecycle of specialized
+            business software — from planning and UI design to implementation —
+            using React and Docker.
+          </li>
+          <li>
+            Resolved bugs across existing production projects and built new
+            frontend features, collaborating with the team via Jira in an agile
+            workflow.
+          </li>
         </ul>
-        <h3 class="experience-title"><span>IELTS Tutor, IELTSku</span><span>January 2024 - Present</span></h3>
-        <ul>
-            <li>Taught English online to Indonesian students that are taking IELTS, increased their overall score up to 7.5.</li>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-left">
+            <div class="company">
+              <a href="https://lexica.app" target="_blank" rel="noopener"
+                >Lexica</a
+              >
+            </div>
+            <div class="role">Full Stack Web Dev Intern</div>
+          </div>
+          <div class="date">November 2023 – May 2024</div>
+        </div>
+        <ul class="bullets">
+          <li>
+            Sole developer of a SaaS application in a startup environment,
+            implementing a payment gateway, real-time video conferencing, and a
+            relational database.
+          </li>
+          <li>
+            Self-taught Next.js, React, and Firebase from zero prior web
+            development experience, reaching proficiency to build
+            production-grade features within weeks.
+          </li>
         </ul>
-        <h3 class="experience-title"><span>Fullstack Intern, Lexica</span><span>November 2024 - May 2025</span></h3>
-        <ul>
-            <li>Currently developing a SaaS program using Next.js, React, and Firebase in a team environment.</li>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-left">
+            <div class="company">
+              <a href="https://ieltsku.com" target="_blank" rel="noopener"
+                >IELTSku</a
+              >
+            </div>
+            <div class="role">IELTS Tutor & LMS Developer</div>
+          </div>
+          <div class="date">January 2024 – Present</div>
+        </div>
+        <ul class="bullets">
+          <li>
+            Delivered one-on-one online IELTS coaching to multiple Indonesian
+            students, helping them achieve scores of up to 7.5.
+          </li>
+          <li>
+            Currently building a lesson management system (LMS) using React and
+            Supabase to streamline scheduling, materials, and student progress
+            tracking.
+          </li>
         </ul>
-    </section>
-    <hr>
-    <section>
-        <h2>EDUCATION</h2>
-        <h3 class="experience-title"><span>Bachelor, Computer Engineering</span><span>Graduating June 2027 (Expected)</span></h3>
-        <p>Hacettepe University</p>
-    </section>
-    <hr>
-    <section>
-        <h2>SKILLS</h2>
-        <p>Next.js, React, HTML, CSS, Javascript, Figma,  C, C++, Python, Java, Firebase</p>
-    </section>
-    <hr>
-    <section>
-        <h2>AWARDS / RECOGNITIONS / VOLUNTEER WORK</h2>
-        <ul>
-            <li class="awards-list"><span>Full Scholarship Awardee, Türkiye Scholarship</span><span>11 August 2022</span></li>
-            <li class="awards-list"><span>Second Place Winner, HackMetu 2025</span><span>16 February 2025</span></li>
-        </ul>
-    </section>
-    <hr>
-    <section>
-        <h2>LICENSES AND CERTIFICATE</h2>
-        <ul>
-            <li class="awards-list"><span>CS50x Harvard's Introduction to Computer Science</span><span>1 November 2024</span></li>
-            <li class="awards-list"><span>Data Analyst Course, PPI Turki</span><span>24 August 2023</span></li>
-            <li class="awards-list"><span>IELTS 8.0</span><span>23 October 2021</span></li>
-            <li class="awards-list"><span>Turkish Proficiency Certificate, Hacettepe University</span><span>14 June 2023</span></li>
-        </ul>
-    </section>
-</body>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Education</div>
+      <div class="edu-row">
+        <div class="edu-left">
+          <span class="edu-school">Hacettepe University</span>
+          <span class="edu-degree">B.Sc. Computer Engineering</span>
+        </div>
+        <div class="date">September 2022 – July 2027</div>
+      </div>
+      <div class="edu-note">
+        Relevant coursework: Data Structures, Algorithms, Database Management,
+        Computer Networks
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Projects</div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-name">
+            <a
+              href="https://github.com/maulasyakur/chat-app"
+              target="_blank"
+              rel="noopener"
+              >chat-app</a
+            >
+          </div>
+          <div class="project-stack">React · TypeScript · PocketBase</div>
+          <div class="project-desc">
+            Real-time chat app with live messaging via SSE subscriptions, user
+            authentication, and role-based access control.
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-name">
+            <a
+              href="https://github.com/maulasyakur/expense_tracker"
+              target="_blank"
+              rel="noopener"
+              >Expense Tracker</a
+            >
+          </div>
+          <div class="project-stack">React · Tailwind CSS · shadcn/ui</div>
+          <div class="project-desc">
+            Personal finance app for tracking daily spending with a dashboard
+            showing breakdowns and monthly trends.
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-name">
+            <a
+              href="https://github.com/maulasyakur/todo-app-flask-react"
+              target="_blank"
+              rel="noopener"
+              >Todo App</a
+            >
+          </div>
+          <div class="project-stack">React · Flask</div>
+          <div class="project-desc">
+            Full-stack task management app with a React frontend and Python
+            Flask REST API backend.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Skills</div>
+      <div class="skills-grid">
+        <div class="skill-row">
+          <span class="skill-label">Languages</span
+          ><span class="skill-value">C, C++, Python, Java</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Frontend</span
+          ><span class="skill-value"
+            >HTML, CSS, JavaScript, TypeScript, React, Next.js</span
+          >
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Backend & DB</span
+          ><span class="skill-value"
+            >Flask, Firebase, Supabase, PocketBase, Spring Boot</span
+          >
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Tools</span
+          ><span class="skill-value">Docker, Jira, Git</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Awards & Certifications</div>
+      <div class="awards">
+        <div class="award-row">
+          <div class="award-left">
+            <span class="award-name">Second Place Winner</span
+            ><span class="award-detail">HackMetu 2025</span>
+          </div>
+          <span class="award-date">16 Feb 2025</span>
+        </div>
+        <div class="award-row">
+          <div class="award-left">
+            <span class="award-name">Full Scholarship Awardee</span
+            ><span class="award-detail"
+              >Türkiye Government Scholarship (competitive national award)</span
+            >
+          </div>
+          <span class="award-date">11 Aug 2022</span>
+        </div>
+        <div class="award-row">
+          <div class="award-left">
+            <span class="award-name">CS50x</span
+            ><span class="award-detail"
+              >Harvard's Introduction to Computer Science</span
+            >
+          </div>
+          <span class="award-date">1 Nov 2024</span>
+        </div>
+        <div class="award-row">
+          <div class="award-left">
+            <span class="award-name">IELTS 8.0</span
+            ><span class="award-detail">English Proficiency</span>
+          </div>
+          <span class="award-date">23 Oct 2021</span>
+        </div>
+        <div class="award-row">
+          <div class="award-left">
+            <span class="award-name">Cisco Packet Tracer</span
+            ><span class="award-detail">Getting Started Certificate</span>
+          </div>
+          <span class="award-date">3 Jan 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Languages</div>
+      <div class="lang-row">
+        <div class="lang-item">
+          <span class="lang-name">English</span
+          ><span class="lang-level">(Native)</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">Bahasa Indonesia</span
+          ><span class="lang-level">(Native)</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">Turkish</span
+          ><span class="lang-level">(Proficient)</span>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
